@@ -6,8 +6,8 @@ Production-oriented Unity foundation for a third-person sci-fi hack-and-slash RP
 
 ## Confirmed foundation
 
-- Unity 6.0.43f1
-- Universal Render Pipeline 17.0.3
+- Unity 6.5.9f1 (`6000.5.9f1`, changeset `b57deb96f08d`)
+- Universal Render Pipeline 17.5.0
 - Input System 1.11.2
 - Cinemachine 3.1.0
 - Addressables 1.21.21
@@ -22,9 +22,13 @@ Feature folders under `Assets/Scripts` own focused runtime systems. Combat data 
 
 Real licensed assets are imported through `Assets/Art/Incoming`, registered in `Docs/Art/AssetRegister.md`, then moved into Addressables groups. No placeholder block art is intended for release scenes. Scenes and prefabs will be added with Unity Editor once the licensed character/environment package is selected.
 
+## Unity 6.5 migration
+
+The repository metadata and URP dependency are pinned for Unity `6000.5.9f1`. On the first Editor open, allow Package Manager and the Asset Database to finish migration. Review any package resolution changes before committing them, then run Edit Mode tests and Windows/Android development builds.
+
 ## Validation
 
-Unity Editor compilation and Play Mode validation are pending because no Unity Editor is attached to this workspace. The C# files are intentionally dependency-light and are ready for an Editor import pass.
+Repository metadata validation is automated in GitHub Actions. Unity Editor compilation, tests and Play Mode validation remain pending until the branch is opened in Unity `6000.5.9f1`.
 
 ## Next vertical-slice milestones
 
