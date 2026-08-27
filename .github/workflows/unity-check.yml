@@ -13,7 +13,8 @@ jobs:
         run: |
           test -f ProjectSettings/ProjectVersion.txt
           test -f Packages/manifest.json
-          grep -q 'com.unity.render-pipelines.universal' Packages/manifest.json
+          grep -q 'm_EditorVersion: 6000.5.9f1' ProjectSettings/ProjectVersion.txt
+          grep -q '"com.unity.render-pipelines.universal": "17.5.0"' Packages/manifest.json
           grep -q 'com.unity.inputsystem' Packages/manifest.json
           grep -q 'com.unity.netcode.gameobjects' Packages/manifest.json
       - name: Check tracked asset policy
