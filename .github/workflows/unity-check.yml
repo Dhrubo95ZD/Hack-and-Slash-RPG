@@ -1,0 +1,21 @@
+name: Unity project check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  project-sanity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Unity project metadata
+        run: |
+          test -f ProjectSettings/ProjectVersion.txt
+          test -f Packages/manifest.json
+          grep -q 'com.unity.render-pipelines.universal' Packages/manifest.json
+          grep -q 'com.unity.inputsystem' Packages/manifest.json
+          grep -q 'com.unity.netcode.gameobjects' Packages/manifest.json
+      - name: Check tracked asset policy
+        run: |
+          ! git ls-files | grep -E '(^|/)(Library|Temp|Logs|Obj|Build|Builds)/'
