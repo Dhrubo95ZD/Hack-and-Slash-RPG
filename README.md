@@ -8,11 +8,13 @@ Third-person real-time combat in a dense neon city. The player uses responsive m
 
 ## Open in Unity
 
-1. Install Unity `6000.0.43f1` with Android and Windows build modules.
+1. Install Unity `6000.5.9f1` with Android and Windows build modules.
 2. Open this folder as a Unity project.
-3. Allow Package Manager to resolve the pinned packages.
+3. Allow Package Manager to resolve the pinned packages. The project targets URP `17.5.0`.
 4. Put licensed production assets in `Assets/Art/Incoming` and document them in `Docs/Art/AssetRegister.md`.
 5. Create scenes under `Assets/Scenes`: `Boot`, `MainMenu`, `NeonStreet_VerticalSlice`.
+
+When first opening the migrated project, let Unity finish the package and asset import before saving. Commit any Unity-generated lockfile changes separately after confirming the Console is clear.
 
 ## Code foundation
 
